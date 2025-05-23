@@ -1,10 +1,10 @@
 :root {
   --color-primary: #151515;
-  --color-accent: #58ef56;
+  --color-accent: #568cef;
   --color: rgb(255, 255, 255);
   --color-background: #222222;
 
-  --color-active: #333232;
+  --color-active: #274171;
 }
 
 * {
@@ -13,7 +13,10 @@
   padding: 0;
 }
 
-html,
+html {
+    background-color: var(--color-primary);
+}
+
 body {
   color: var(--color);
   background-color: var(--color-background);
@@ -21,35 +24,40 @@ body {
   height: calc(100vh - 1px);
   width: 100%;
   overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 /* ==========================================================================
  Standard Button and SVG
 ========================================================================== */
 
-.btn {
+ .btn {
     width: 48px;
     height: 48px;
     padding: 8px;
+
     color: var(--color-primary);
-    /* fill: white; */
-    background-color: var(--color-primary);
+    background-color: var(--primary-color);
     border: none;
-    /* transition: border 0.3s; */
-    transition: background-color 0.2s;
-    /* transition: border 0.3s; */
+    border-radius: 5px;
+    transition: background-color .3s ease-in;
   }
 
-  .btn:focus {
 
+  
+  .btn:focus{
+    border: 2px solid var(--color-accent)
   }
 
-.btn:active {
+   .btn:active {
     background-color: var(--color-active);
-    transition: background-color 0.1s;
-}
+    transition: backgroun-color 0.3s ease-out;
+  }
+
+
   
 svg {
   fill: var(--color-accent);
@@ -100,13 +108,15 @@ main {
   justify-content: space-between;
   align-items: center;
   height: 90%;
+  margin-top: .5rem;
+
 }
 
 /* ==========================================================================
- Date Selector Bar
+ Top Bar
 ========================================================================== */
 
-.date-selector-bar {
+.top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,7 +137,7 @@ main {
 }
 
 /* ==========================================================================
- Workouts
+ Content Area
 ========================================================================== */
 
 h1 {
@@ -162,7 +172,6 @@ article {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  border-radius: 0.5rem;
 
   /* touch-action: manipulation; */
   -webkit-tap-highlight-color: transparent;

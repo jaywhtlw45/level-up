@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Level Up</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="icon" href="../favicon.png" type="image/png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
 
-  <body data-page="home">
+  <body data-page="add-workout">
     <section class="navbar">
       <div class="brand-info">
-        <img src="favicon.png" alt="level up logo" class="logo" />
+        <img src="../favicon.png" alt="level up logo" class="logo" />
       </div>
 
       <div class="nav-buttons">
@@ -31,7 +31,7 @@
           </svg>
         </button>
 
-        <button onclick="location.href='pages/add-workout.html'" type="button" class="btn">
+        <button class="btn">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
@@ -58,37 +58,16 @@
     </section>
 
     <main>
+
       <div class="top-bar">
-        <button class="btn">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="previous-day-icon"
-          >
-            <path
-              d="M177.5 414c-8.8 3.8-19 2-26-4.6l-144-136C2.7 268.9 0 262.6 0 256s2.7-12.9 7.5-17.4l144-136c7-6.6 17.2-8.4 26-4.6s14.5 12.5 14.5 22l0 72 288 0c17.7 0 32 14.3 32 32l0 64c0 17.7-14.3 32-32 32l-288 0 0 72c0 9.6-5.7 18.2-14.5 22z"
-            />
-          </svg>
-        </button>
-        <h3 class="date">Sunday May 18</h3>
-        <button class="btn next-day">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
-            class="next-day-icon"
-          >
-            <path
-              d="M334.5 414c8.8 3.8 19 2 26-4.6l144-136c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22l0 72L32 192c-17.7 0-32 14.3-32 32l0 64c0 17.7 14.3 32 32 32l288 0 0 72c0 9.6 5.7 18.2 14.5 22z"
-            />
-          </svg>
-        </button>
       </div>
+
       <div class="content-area">
         <section>
-          <h1 class="empty-notice">Workout Log Empty</h1>
-          <article>Workouts will Go Here</article>
+          
         </section>
       </div>
+
       <div class="bottom-bar">
         <button class="btn">
           <svg
@@ -116,6 +95,5 @@
         </button>
       </div>
     </main>
-    <script src="scripts/date-update.js" type="module"></script>
   </body>
 </html>
