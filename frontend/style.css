@@ -5,20 +5,50 @@
     --color-background: #222222;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-
-html {
+html, body {
     color: var(--color);
     background-color: var(--color-background);
+    height: 100dvh;
+    height: calc(100vh - 1px);
+    width: 100%;
+    overflow: hidden;
+
+    border: 1px solid red;
 }
+
+/**** NAV ****/
 
 .navbar {
-
+    height: max(6%, 60px);
+    display: flex;
+    padding: .4rem;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 5px solid blue; */
 }
 
-img {
-    fill: white;
-    color: white;
+.nav-buttons {
+    display: flex;
+}
+
+.brand-info {
+    height: 100%;
+    /* width: 40px; */
+    display: flex;
+    border: 1px solid green;
+    /* justify-content: left; */
+}
+
+.brand-info img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .btn {
