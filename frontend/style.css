@@ -1,74 +1,159 @@
 :root {
-    --color-primary: #151515;
-    --color-accent: #33b5e6;
-    --color: white;
-    --color-background: #222222;
+  --color-primary: #151515;
+  --color-accent: #58ef56;
+  --color: rgb(255, 255, 255);
+  --color-background: #222222;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
-    color: var(--color);
-    background-color: var(--color-background);
-    height: 100dvh;
-    height: calc(100vh - 1px);
-    width: 100%;
-    overflow: hidden;
+html,
+body {
+  color: var(--color);
+  background-color: var(--color-background);
+  height: 100dvh;
+  height: calc(100vh - 1px);
+  width: 100%;
+  overflow: hidden;
 
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
-/**** NAV ****/
-
-.navbar {
-    height: max(6%, 60px);
-    display: flex;
-    padding: .4rem;
-    align-items: center;
-    justify-content: space-between;
-    /* border: 5px solid blue; */
-}
-
-.nav-buttons {
-    display: flex;
-}
-
-.brand-info {
-    height: 100%;
-    /* width: 40px; */
-    display: flex;
-    border: 1px solid green;
-    /* justify-content: left; */
-}
-
-.brand-info img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
+/* ==========================================================================
+ Standard Button and SVG
+========================================================================== */
 
 .btn {
-    width: 48px;
-    height: 48px;
-    padding: 8px;
-    color: var(--color);
+  width: 48px;
+  height: 48px;
+  padding: 8px;
+  color: var(--color-primary);
+  /* fill: white; */
+  background: none;
+  transition: 0.3s;
 }
 
 svg {
-    fill: red;
-    color: red;
+  fill: var(--color-accent);
+  /* background-color: none; */
+}
+
+/* ==========================================================================
+ Nav Bar
+========================================================================== */
+
+.navbar {
+  height: max(7%, 60px);
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 5px solid blue; */
+}
+
+/** Brand Info **/
+
+.brand-info {
+  height: 100%;
+  display: flex;
+  /* border: 1px solid var(--color-accent); */
+}
+
+.brand-info img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/** Nav Buttons **/
+
+.nav-buttons .btn {
+}
+
+/* ==========================================================================
+ Main
+========================================================================== */
+
+/*!------------ CHANGE 80% to calculate height of screen */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+}
+
+/* ==========================================================================
+ Date Selector Bar
+========================================================================== */
+
+.date-selector-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--color-primary);
+  height: 8%;
+  padding: 0.5rem;
 }
 
 .plus-icon {
-    fill:red;
-    color:red;
+  fill: red;
+  color: red;
 }
 
 .add-workout {
-    fill: red;
-    color: red;
+  fill: red;
+  color: red;
+}
+
+/* ==========================================================================
+ Workouts
+========================================================================== */
+
+h1 {
+  text-align: center;
+}
+
+article {
+  text-align: center;
+}
+
+/* ==========================================================================
+ Bottom Bar
+========================================================================== */
+
+.bottom-bar {
+  /* border: 1px solid green; */
+  height: 20%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.bottom-bar .btn {
+  width: 60%;
+  color: var(--color-accent);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 0.5rem;
+
+  /* touch-action: manipulation; */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-bar svg {
+  max-height: 100%;
 }
