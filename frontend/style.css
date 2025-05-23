@@ -3,6 +3,8 @@
   --color-accent: #58ef56;
   --color: rgb(255, 255, 255);
   --color-background: #222222;
+
+  --color-active: #333232;
 }
 
 * {
@@ -28,15 +30,27 @@ body {
 ========================================================================== */
 
 .btn {
-  width: 48px;
-  height: 48px;
-  padding: 8px;
-  color: var(--color-primary);
-  /* fill: white; */
-  background: none;
-  transition: 0.3s;
-}
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    color: var(--color-primary);
+    /* fill: white; */
+    background-color: var(--color-primary);
+    border: none;
+    /* transition: border 0.3s; */
+    transition: background-color 0.2s;
+    /* transition: border 0.3s; */
+  }
 
+  .btn:focus {
+
+  }
+
+.btn:active {
+    background-color: var(--color-active);
+    transition: background-color 0.1s;
+}
+  
 svg {
   fill: var(--color-accent);
   /* background-color: none; */
