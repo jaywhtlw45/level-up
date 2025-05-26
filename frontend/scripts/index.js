@@ -1,47 +1,71 @@
 
 "use strict";
 
+const DEFAULT_STATE = { "date": null }
+const STATE_KEY = 'level_up_state'
+
 function start() {
-    createState()
+    initializeState()
     updateDateTimeInStorage()
-    updateDateTimeDOM()
+    console.log(localStorage.getItem(STATE_KEY))
+    // updateDateTimeInDOM()
 }
 
-//! check if state is valid and wrap in try block
-//! check against all state types
-function createState() {
-    const raw = localStorage.getItem('level_Up_state');
-    let state = JSON.parse(raw);
 
+
+//! check against all state types
+function isValidState() {
+    return true // for now
+}
+
+function initializeState() {
+    let state = getAppState()
     if (!state || typeof state !== 'object' || !('date' in state)) {
-        state = { dateTime: null }
-        localStorage.setItem("level_up_state", JSON.stringify(state))
+        updateAppState(DEFAULT_STATE)
     }
 }
 
 function getAppState() {
-    let raw = localStorage.getItem("level_up_state")
-    return JSON.parse(raw)
+    const raw = localStorage.getItem(STATE_KEY)
+    if (raw && raw !== 'undefined') {
+        return JSON.parse(raw)
+    } else {
+        return null;
+    }
 }
 
-function updateAppState(state){
-    localStorage.setItem('level_up_state', JSON.stringify(state))
+function updateAppState(state) {
+    try{
+        if (!isValidState()) {
+            throw new Error("Invalid or missing state")
+        }
+        localStorage.setItem('level_up_state', JSON.stringify(state))
+    } catch (e)
+    {
+        localStorage.setItem('level_up_state', JSON.stringify(DEFAULT_STATE))
+    }
 }
 
 //! WRAP in try catch block
 function updateDateTimeInStorage() {
-
     const state = getAppState()
-    if (!state || typeof state != 'object' | !('date' in state)) {
-        console.log("error")
+    try {
+        if (!state || typeof state != 'object' | !('date' in state)) {
+            throw new Error("Invalid or missing state")
+        }
+
+        const dateTime = new Date();
+        state.date = dateTime.toISOString();
+        updateAppState()
+    }
+    catch (e) {
+        const state = DEFAULT_STATE
+        localStorage.setItem(state)
     }
 
-    const dateTime = new Date();
-    state.date = dateTime.toISOString();
-    updateAppState()
 }
 
-function updateDateTimeDOM() {
+function updateDateTimeInDOM() {
 
 }
 
@@ -69,4 +93,7 @@ document.addEventListener('DOMContentLoaded', start)
 
 //!Suggestion 3
 // consider using sessionStorage
+
+//! Suggestion 4
+// Use Unux Epoch time and converrt
 
